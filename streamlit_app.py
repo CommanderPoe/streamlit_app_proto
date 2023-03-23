@@ -19,5 +19,9 @@ streamlit.header('Smoothies, make your own 🥝')
 # adding widget to select fruits
 streamlit.multiselect('Pick your own:', list(my_fruit_list.index))
 
+# list of selected fruits
+fruits_selected = streamlit.multiselect('Pick your own:', list(my_fruit_list.index))
+fruits_to_show = my_fruit_list.loc[fruits_selected]
+
 # printing dataframe
-streamlit.dataframe(my_fruit_list)
+streamlit.dataframe(fruits_to_show)
